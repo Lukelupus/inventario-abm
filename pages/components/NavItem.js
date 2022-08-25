@@ -7,18 +7,13 @@ function NavItem({to, children, ...props}) {
     const router = useRouter()
     const isActive = router.query.to
 
-    console.log(to)
-    useEffect(() => {
-        
-        router.push(`/#${to}`), undefined, { shallow: true}
-    }, [router.query.to])
-
+ 
 
     
     
     return (
         <li className={isActive ? "active nav-item" : "nav-item"}>
-        <a className="nav-a" to={to} {...props}>
+        <a className="nav-a" href={to} {...props}>
             {children}
         </a>
     </li>
